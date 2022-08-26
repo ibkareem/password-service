@@ -1,0 +1,7 @@
+{
+  "lambda": {
+    "role": "password-service-executor",
+    "name": "password-service",
+    "region": "us-east-1"
+  }
+}
