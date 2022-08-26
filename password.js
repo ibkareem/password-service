@@ -10,7 +10,13 @@ const requestError = (reason) => {
 };
 
 async function handler(event) {
-  const payload = JSON.parse(event.body);
+  try {
+    const payload = JSON.parse(event.body);
+  } catch (error) {
+    return requestError(
+      "the format of request body. JSON, XML and raw text supported"
+    );
+  }
   if (!payload.hasOwnProperty("action")) return requestError(`*action* key`);
   switch (payload.action) {
     case "hash":
