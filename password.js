@@ -11,7 +11,7 @@ const requestError = (reason) => {
 
 async function handler(event) {
   try {
-    const payload = JSON.parse(event.body);
+    var payload = JSON.parse(event.body);
   } catch (error) {
     return requestError(
       "the format of request body. JSON, XML and raw text supported"
